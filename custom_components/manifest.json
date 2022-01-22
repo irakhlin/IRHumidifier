@@ -1,0 +1,10 @@
+{
+  "domain": "irhumidifier",
+  "name": "HumidifierIR",
+  "documentation": "https://github.com/irakhlin/HumidifierIR",
+  "dependencies": [],
+  "codeowners": ["Ilya Rakhlin"],
+  "requirements": [],
+  "homeassistant": "0.115.0",
+  "version": "1.0.0"
+}
