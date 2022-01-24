@@ -2,6 +2,7 @@ import os.path
 import logging
 import binascii
 import struct
+import aiofiles
 import aiohttp
 from aiohttp import ClientSession
 from homeassistant.core import HomeAssistant, callback

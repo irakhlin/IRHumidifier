@@ -11,28 +11,61 @@ toggle_function:
       description: Toggle specified function on/off
       required: true
       selector:
-        
-
-  selector:
-    select:
-      options:
-        - "light"
-        - "uv"
-        - "warm_mist"
-        - "night_mode"
+        select:
+          options:
+            - "light_mode"
+            - "uv_mode"
+            - "warm_mist"
+            - "night_mode"
 increase:
   name: increase
   description: Increase Speed/Humidity Setting
+  target:
+    entity:
+      integration: irhumidifier
+      domain: humidifier
+
 decrease:
   name: decrease
-  description: Decrease Speed/Humidity Setting]
+  description: Decrease Speed/Humidity Setting
+  target:
+    entity:
+      integration: irhumidifier
+      domain: humidifier
+
 set_speed:
   name: set_speed
   description: Function to set speed
-  required: true
-  selector:
-    select:
-      number:
-        min: 1
-        max: 7
-        step: 1
+  target:
+    entity:
+      integration: irhumidifier
+      domain: humidifier
+  fields:
+    speed:
+      name: Humidifier Speed
+      description: Set the Humidifier Manual Speed
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 7
+          step: 1
+          mode: slider
+
+sync_state:
+  name: sync_state
+  description: Set the state on/off without sending a command
+  target:
+    entity:
+      integration: irhumidifier
+      domain: humidifier
+  fields:
+    state:
+      name: State
+      description: State of humidifier to sync
+      required: true
+      selector:
+        select:
+          options:
+            - "on"
+            - "off"
